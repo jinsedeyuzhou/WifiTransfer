@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+
+    defaultConfig {
+        applicationId "com.ebrightmoon.wifitransfer"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    compileOptions {
+        sourceCompatibility rootProject.ext.sourceCompatibilityVersion
+        targetCompatibility rootProject.ext.targetCompatibilityVersion
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: "*.jar")
+    implementation deps.supportAppCompat
+    implementation deps.supportDesign
+    implementation(deps.rxbus) {
+        exclude group: 'com.jakewharton.timber', module: 'timber'
+    }
+    implementation deps.androidasync
+    implementation deps.timber
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+}
