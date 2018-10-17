@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">无线安装</string>
+    <string name="app_name">WifiInstall</string>
     <string name="wlan_enabled">WLAN服务已开启</string>
     <string name="wlan_disabled">WLAN服务未开启</string>
     <string name="pls_check_network_state">请检查您的网络设置</string>
